@@ -7,6 +7,12 @@ import { Car } from 'src/app/models/Car';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
+ 
+ 
+ 
+ constructor(){
+  
+ }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
