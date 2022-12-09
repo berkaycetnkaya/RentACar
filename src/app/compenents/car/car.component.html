@@ -1,1 +1,40 @@
-<p>car works!</p>
+ <div *ngIf="dataLoad==false" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <table *ngIf="dataLoad!=false" class="table">
+    <thead > 
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Renk </th>
+        <th scope="col">Marka</th>
+        <th scope="col">Model Yılı<th>
+       <th scope="col"> Günlük Ücret<th>
+        <th scope="col"> Açıklama<th>
+      </tr>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let car of cars">
+        <th scope="row">{{car.Id}}</th>
+        <td>{{car.Id}}</td>
+        <td>{{car.ColorId}}</td>
+        <td>{{car.BrandId}}</td>
+        <td>{{car.ModelYear}}</td>
+        <td>{{car.DailyPrice}}</td>
+        <td>{{car.Description}}</td>
+      </tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Berkay Çetinkaya</td>
+      <td></td>
+    </tbody>
+  </table>  
+
+  {{cars}}
+
+
+ 
+  
+
+
