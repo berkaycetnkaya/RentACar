@@ -9,7 +9,7 @@ import { ColorComponent } from './compenents/color/color.component';
 import { NaviComponent } from './compenents/navi/navi.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CarsComponent } from './compenents/cars/cars.component';
+
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { CarsComponent } from './compenents/cars/cars.component';
     BrandComponent,
     ColorComponent,
     NaviComponent,
-    CarsComponent
+    
   ],
   imports: [
     BrowserModule,
