@@ -1,4 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, TitleStrategy } from '@angular/router';
 import { CarDetail } from 'src/app/models/carDetail';
 
 
@@ -18,9 +20,13 @@ export class CarComponent implements OnInit {
  
   // ctor da verirsen classda erişebilirsin
   // private yaptık cunku Carcomponentı  baska classda olusturup cagıran bır kısı httpcliente de erişebilir ondan private yaptık
-  constructor(private carService:CarService) {}
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute) {}
   ngOnInit(): void {
-    this.getCars();
+   this.activatedRoute.params.subscribe(params=>{
+    if(params["id"]){
+      this.getCarsByBrand(params)
+    }
+   })
   }
 
   
@@ -35,4 +41,18 @@ export class CarComponent implements OnInit {
     })
     
   }
+
+  getCarsByBrand(brand:number) {
+    
+
+    this.carService.getByBrand(brand).subscribe(response=>{
+      this.details=response.data
+      this.dataLoad=true;
+    })
+    
+  }
+
+
+
+
 }
