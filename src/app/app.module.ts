@@ -8,17 +8,23 @@ import { BrandComponent } from './compenents/brand/brand.component';
 import { ColorComponent } from './compenents/color/color.component';
 import { NaviComponent } from './compenents/navi/navi.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { CarsComponent } from './compenents/cars/cars.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     CarComponent,
     BrandComponent,
     ColorComponent,
-    NaviComponent
+    NaviComponent,
+    CarsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
