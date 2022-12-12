@@ -7,8 +7,10 @@ import { CarComponent } from './compenents/car/car.component';
 import { BrandComponent } from './compenents/brand/brand.component';
 import { ColorComponent } from './compenents/color/color.component';
 import { NaviComponent } from './compenents/navi/navi.component';
-
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 
 
@@ -19,12 +21,15 @@ import { HttpClientModule } from '@angular/common/http';
     BrandComponent,
     ColorComponent,
     NaviComponent,
+    VatAddedPipe,
+    FilterPipePipe,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

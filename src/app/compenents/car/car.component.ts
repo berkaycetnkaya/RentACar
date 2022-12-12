@@ -16,6 +16,7 @@ export class CarComponent implements OnInit {
   cars: Car[] = [];
   dataLoad = false;
   details:CarDetail[]=[]
+  filterText="";
 
  
   // ctor da verirsen classda erişebilirsin
@@ -24,8 +25,9 @@ export class CarComponent implements OnInit {
   ngOnInit(): void {
    this.activatedRoute.params.subscribe(params=>{
     if(params["id"]){
-      this.getCarsByBrand(params)
+      this.getCarsByBrand(params["id"])
     }
+    else{this.getCars()}
    })
   }
 
