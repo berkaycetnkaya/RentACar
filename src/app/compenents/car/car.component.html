@@ -24,9 +24,9 @@
         <th scope="col"><th></th>
        
     </tr>
-  <tbody class="table-group-divider" >
-    <tr *ngFor="let detail of details |filterPipe:filterText">
-      <td scope="row">{{detail.brandName}}</td>
+  <tbody class="table-group-divider " >
+    <tr *ngFor="let detail of details  |filterPipe:filterText ">
+      <td scope="row">{{detail.brandName }}</td>
       <td scope="row">{{detail.colorName |uppercase}}</td>
       <td scope="row">{{detail.modelYear}}</td>
     

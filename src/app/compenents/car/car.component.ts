@@ -1,12 +1,14 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, TitleStrategy } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/carDetail';
 
 
 
 import { Car } from 'src/app/models/carr';
 import { CarService } from 'src/app/services/car.service';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
@@ -21,7 +23,7 @@ export class CarComponent implements OnInit {
  
   // ctor da verirsen classda erişebilirsin
   // private yaptık cunku Carcomponentı  baska classda olusturup cagıran bır kısı httpcliente de erişebilir ondan private yaptık
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute) {}
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private cartService:CartService) {}
   ngOnInit(): void {
    this.activatedRoute.params.subscribe(params=>{
     if(params["id"]){
@@ -55,7 +57,12 @@ export class CarComponent implements OnInit {
   }
 
 addToCart(cars:CarDetail){
-  console.log(cars)
+
+ 
+ 
+ 
+  this.toastrService.success("Seçmiş Olduğunuz Araç Kartınıza  Eklendi",cars.brandName)
+  this.cartService.addToCart(cars);
 }
 
 
