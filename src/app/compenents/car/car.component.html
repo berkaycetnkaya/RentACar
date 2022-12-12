@@ -21,10 +21,11 @@
      <th scope="col">Ücreti<th>
       <th scope="col">İndirimli Ücret</th>
       <th scope="col"> Özellikleri<th>
-        <th scope="col"> BrandID<th></th>
+        <th scope="col"><th></th>
+       
     </tr>
   <tbody class="table-group-divider" >
-    <tr *ngFor="let detail of details">
+    <tr *ngFor="let detail of details |filterPipe:filterText">
       <td scope="row">{{detail.brandName}}</td>
       <td scope="row">{{detail.colorName |uppercase}}</td>
       <td scope="row">{{detail.modelYear}}</td>
@@ -37,6 +38,7 @@
       <td scope="row">{{detail.dailyPrice | vatAdded:10 | currency}}</td>
       <td scope="row">{{detail.description}}</td>
       <td scope="row">{{detail.brandId}}</td>
+      <td> <button (click)="addToCart(detail)" type="button" class="btn btn-success btn-xs">Kirala</button>           </td>
     </tr>
     <td></td>
     <td></td>

@@ -54,7 +54,9 @@ export class CarComponent implements OnInit {
     
   }
 
-
+addToCart(cars:CarDetail){
+  console.log(cars)
+}
 
 
 }
