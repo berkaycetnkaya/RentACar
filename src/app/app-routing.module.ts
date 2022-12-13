@@ -4,6 +4,7 @@ import { BrandComponent } from './compenents/brand/brand.component';
 import { CarAddComponent } from './compenents/car-add/car-add.component';
 import { CarComponent } from './compenents/car/car.component';
 import { ColorComponent } from './compenents/color/color.component';
+import { LoginComponent } from './compenents/login/login.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full" ,component:CarComponent},
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:"brands",component:BrandComponent},
   {path:"colors",component:ColorComponent},
   {path:"cars/brands/:id",component:CarComponent},
-  {path:"cars/add",component:CarAddComponent}
+  {path:"cars/add",component:CarAddComponent},
+  {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './compenents/cart-summary/cart-summary.component';
 import { ColorfilterPipe } from './pipes/colorfilter.pipe';
 import { CarAddComponent } from './compenents/car-add/car-add.component';
+import { LoginComponent } from './compenents/login/login.component';
 
 
 
@@ -34,6 +35,7 @@ import { CarAddComponent } from './compenents/car-add/car-add.component';
     CartSummaryComponent,
     ColorfilterPipe,
     CarAddComponent,
+    LoginComponent,
     
   ],
   imports: [

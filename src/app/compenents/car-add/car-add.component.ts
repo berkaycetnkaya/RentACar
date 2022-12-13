@@ -34,8 +34,15 @@ export class CarAddComponent implements OnInit {
           this.toastrService.success(data.message,"Başarılı")
         },dataError=>{
 
-          console.log(dataError.error)
-          this.toastrService.error(dataError.error)
+        if (dataError.error.Errors.length>0){
+         console.log(dataError.error.Errors)
+         for (let i = 0; i < dataError.error.Errors.length; i++) {
+          this.toastrService.error(dataError.error.Errors[i].ErrorMessage,"Doğrulama Hatası")
+          
+         }
+          
+        }
+          
         })
         
 
