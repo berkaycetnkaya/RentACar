@@ -1,21 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl,FormGroup,Validators,FormBuilder } from "@angular/forms";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
- 
-  constructor() {
-    
+
+ loginForm:FormGroup;
+  constructor(private formBuilder:FormBuilder) {
+
 
   }
-  
-  
+
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.createLoginForm();
   }
+
+createLoginForm(){
+this.loginForm=this.formBuilder.group({
+  email:["",Validators.required],
+  password:["",Validators.required]
+})
+}
+login(){
+  if(this.loginForm.valid){
+    console.log(this.loginForm.value);
+
+  }
+}
 
 }
