@@ -13,23 +13,23 @@ import { ResponseModel } from '../models/responseModel';
 export class CarService {
   apiUrl = 'https://localhost:7214/api/';
   apidetail="https://localhost:7214/api/Cars/getallDetail"
-  
+
 
 
   constructor(private httpClient: HttpClient) { }
   getCars():Observable<ListResponseModel<CarDetail>> {
-   
+
     let newPath=this.apiUrl+"cars/getallDetail"
 
 
   return  this.httpClient.get<ListResponseModel<CarDetail>>(newPath)
   }
- 
- 
+
+
   getByBrand(brand:number):Observable<ListResponseModel<CarDetail>> {
-    
+
     let newPath=this.apiUrl+"Cars/getbyBrand?brand="+brand
-    
+
     return  this.httpClient.get<ListResponseModel<CarDetail>>(newPath)
     }
 

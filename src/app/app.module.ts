@@ -11,7 +11,7 @@ import { BrandComponent } from './compenents/brand/brand.component';
 import { ColorComponent } from './compenents/color/color.component';
 import { NaviComponent } from './compenents/navi/navi.component';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ToastrModule } from 'ngx-toastr';
@@ -19,6 +19,7 @@ import { CartSummaryComponent } from './compenents/cart-summary/cart-summary.com
 import { ColorfilterPipe } from './pipes/colorfilter.pipe';
 import { CarAddComponent } from './compenents/car-add/car-add.component';
 import { LoginComponent } from './compenents/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -36,7 +37,7 @@ import { LoginComponent } from './compenents/login/login.component';
     ColorfilterPipe,
     CarAddComponent,
     LoginComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,9 @@ import { LoginComponent } from './compenents/login/login.component';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
