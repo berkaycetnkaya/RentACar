@@ -10,7 +10,7 @@
   <div class="row">
     <div>
       <div class="mb-3">
-        <label for="filterText" class="form-label">Araç Arayın</label>
+        <label for="filterText" class="form-label">Marka Arayın</label>
         <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arayın">
       </div>
       <div *ngIf="filterText.length>2" class="alert alert-primary">
@@ -39,6 +39,7 @@
             <th scope="col"> Özellikleri<th>
               <th scope="col"><th></th>
 
+
           </tr>
         <tbody class="table-group-divider " >
           <tr *ngFor="let detail of details  |filterPipe:filterText ">
@@ -55,6 +56,7 @@
             <td scope="row">{{detail.description}}</td>
 
             <td> <button (click)="addToCart(detail)" type="button" class="btn btn-success btn-xs">Kirala</button>           </td>
+
           </tr>
           <td></td>
           <td></td>

@@ -21,6 +21,8 @@ import { CarAddComponent } from './compenents/car-add/car-add.component';
 import { LoginComponent } from './compenents/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './compenents/register/register.component';
+import { DeleteCarComponent } from './compenents/delete-car/delete-car.component';
+import { DenemelerimComponent } from './compenents/denemelerim/denemelerim.component';
 
 
 
@@ -39,6 +41,8 @@ import { RegisterComponent } from './compenents/register/register.component';
     CarAddComponent,
     LoginComponent,
     RegisterComponent,
+    DeleteCarComponent,
+    DenemelerimComponent,
 
   ],
   imports: [
@@ -54,6 +58,7 @@ import { RegisterComponent } from './compenents/register/register.component';
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+
   ],
   bootstrap: [AppComponent]
 })

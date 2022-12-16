@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   /**
    *
    */
+  loginEkranı = false;
   registerForm:FormGroup
   constructor(private formBuilder:FormBuilder, private authService:AuthService,private toastrService:ToastrService,private router:Router) {
 
@@ -31,7 +32,7 @@ export class RegisterComponent implements OnInit {
       email:["",Validators.required],
       password:["",Validators.required],
       lastName:["",Validators.required],
-      irstName:["",Validators.required]
+      firstName:["",Validators.required]
     })
     }
 
@@ -50,6 +51,8 @@ export class RegisterComponent implements OnInit {
           console.log(responseError)
           this.toastrService.error(responseError.error)
         } )
+        this.router.navigate(["login"])
       }
+
     }
 }
