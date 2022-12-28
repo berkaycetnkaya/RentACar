@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"cars/add",component:CarAddComponent,canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path: "cars/delete",component:DeleteCarComponent},
+  {path: "cars/delete",component:DeleteCarComponent,canActivate:[LoginGuard]},
   {path:"denemelerim",component:DenemelerimComponent}
 ];
 // guardı pathin içinde hangisinde kullanacaksan oraya yazıyorsun canactivate: [loginguard]

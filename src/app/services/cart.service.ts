@@ -19,7 +19,7 @@ export class CartService {
     let vehicle = CartItems.find(c=>c.cars.id===car.id);
     if (vehicle){
       this.toastrService.error("Aracı Zaten Ekli")
-      
+
     }
     else{
       let cartItem = new CartItem();
@@ -32,6 +32,7 @@ export class CartService {
   list():CartItem[]{
     return CartItems;
   }
+
 
 removeFromCart(car:CarDetail){
   let vehicle = CartItems.find(c=>c.cars.id===car.id);

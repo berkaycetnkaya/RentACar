@@ -5,6 +5,6 @@
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li *ngFor="let cartItem of cartItems" ><a class="dropdown-item">{{cartItem.cars.brandName}} id= {{cartItem.cars.id}}   <span (click)="removeFromCart(cartItem.cars)" class="badge text-bg-secondary">Sil</span></a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" >Araçlarım</a></li>
+      <li><a class="dropdown-item"  >Araçlarım</a></li>
     </ul>
   </li>

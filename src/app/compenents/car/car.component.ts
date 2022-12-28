@@ -20,7 +20,7 @@ export class CarComponent implements OnInit {
   details:CarDetail[]=[]
   filterText="";
 
- 
+
   // ctor da verirsen classda erişebilirsin
   // private yaptık cunku Carcomponentı  baska classda olusturup cagıran bır kısı httpcliente de erişebilir ondan private yaptık
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private cartService:CartService) {}
@@ -33,7 +33,7 @@ export class CarComponent implements OnInit {
    })
   }
 
-  
+
   getCars() {
     // this geliyor cunku javascripte class diye bir şey yok, her sey fonksiyon type script class- this dediğinde üsteki fonksiyona denk gelıyor demek
     // gelen veriyi aşağıda benim oluşturdugum response modele gore maple demek <>
@@ -43,24 +43,24 @@ export class CarComponent implements OnInit {
       this.details=response.data
       this.dataLoad=true;
     })
-    
+
   }
 
   getCarsByBrand(brand:number) {
-    
+
 
     this.carService.getByBrand(brand).subscribe(response=>{
       this.details=response.data
       this.dataLoad=true;
     })
-    
+
   }
 
 addToCart(cars:CarDetail){
 
- 
- 
- 
+
+
+
   this.toastrService.success("Seçmiş Olduğunuz Araç Kartınıza  Eklendi",cars.brandName)
   this.cartService.addToCart(cars);
 }
