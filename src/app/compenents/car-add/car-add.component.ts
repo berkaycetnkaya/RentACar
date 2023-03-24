@@ -5,7 +5,7 @@ import { CarService } from 'src/app/services/car.service';
 
 // FormBuilder: reactive formun servisi , backend deki fluentvalidation gibi mantığı aynı
 
-// FromControl : 
+// FromControl :
 
 
 @Component({
@@ -14,13 +14,13 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car-add.component.css']
 })
 export class CarAddComponent implements OnInit {
-  
+
  carAddForm:FormGroup
   constructor(private formsBuilder:FormBuilder, private carService:CarService, private toastrService:ToastrService ) {
-    
+
   }
-  
-  
+
+
   ngOnInit(): void {
     this.createCarAddForm();
     this.add();
@@ -28,8 +28,8 @@ export class CarAddComponent implements OnInit {
 
   add(){
     if(this.carAddForm.valid){
-      let carModel= Object.assign({},this.carAddForm.value) 
-        this.carService.add(carModel).subscribe(data=>{
+      let carModel= Object.assign({},this.carAddForm.value)
+          this.carService.add(carModel).subscribe(data=>{
           console.log(data)
           this.toastrService.success(data.message,"Başarılı")
         },dataError=>{
@@ -38,27 +38,27 @@ export class CarAddComponent implements OnInit {
          console.log(dataError.error.Errors)
          for (let i = 0; i < dataError.error.Errors.length; i++) {
           this.toastrService.error(dataError.error.Errors[i].ErrorMessage,"Doğrulama Hatası")
-          
+
          }
-          
+
         }
-          
+
         })
-        
+
 
     }else{
       this.toastrService.error("Formunuz Eksik","Dikkat")
     }
-    
-   
-   
+
+
+
   }
 
   createCarAddForm(){
 this.carAddForm=this.formsBuilder.group({
-  
-  
-  
+
+
+
   brandId:["",Validators.required],
   colorId:["",Validators.required],
   modelYear:["",Validators.required],
